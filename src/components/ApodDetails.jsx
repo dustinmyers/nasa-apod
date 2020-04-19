@@ -27,6 +27,7 @@ export default function ApodDetails({ apod, startDate, setStartDate, setUrl }) {
         popperPlacement="top"
         maxDate={new Date()}
       />
+      <p className="date-prompt">Click to choose a new date</p>
       <p className="apod-explanation">{apod.explanation}</p>
     </>
   );
