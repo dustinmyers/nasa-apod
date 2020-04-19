@@ -1,0 +1,102 @@
+.apod-title {
+  font-weight: 400;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "MADE-EVO";
+}
+
+.apod-explanation {
+  font-size: 1rem;
+}
+
+.react-datepicker-wrapper {
+  // width: 100%;
+  padding: 16px;
+}
+
+.react-datepicker__input-container {
+  display: flex;
+}
+
+.date-picker {
+  margin: 0 auto;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 2rem;
+  text-align: center;
+  font-family: "MADE-EVO";
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.react-datepicker__header {
+  text-align: center;
+  background-color: #2b3566;
+  color: #fff;
+  border-bottom: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 8px;
+  position: relative;
+
+  div {
+    color: #ffffff;
+  }
+}
+
+.react-datepicker__today-button {
+  background: #2b3566;
+  color: #fff;
+  border-top: 0px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+  clear: left;
+}
+
+.react-datepicker {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  background-color: #3fb9ae;
+  color: #fff;
+  border: 0px;
+  border-radius: 0;
+  display: inline-block;
+  position: relative;
+
+  div {
+    color: #ffffff;
+  }
+}
+.react-datepicker {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  background-color: #3fb9ae;
+  color: #fff;
+  border: 0px;
+  border-radius: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.react-datepicker__day--selected {
+  background-color: #fc4a71;
+}
+
+@media (max-width: 1050px) {
+  .apod-title {
+    font-size: 2.5rem;
+  }
+
+  .date-picker {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .apod-title {
+    font-size: 2rem;
+  }
+}

@@ -1,55 +1,73 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import './App.css';
+import React from "react";
+import { useEffect, useState } from "react";
+
+import ApodImage from "./components/ApodImage";
+import ApodDetails from "./components/ApodDetails";
+import SaturnLoader from "./assets/images/saturn.gif";
+import "./App.scss";
 
 function App() {
-  const [date, setDate] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
+  const [url, setUrl] = useState(
+    `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&hd=false`
+  );
+  const [isFetching, setIsFetching] = useState(true);
+  const [error, setError] = useState("");
+
+  const [apod, setApod] = useState({});
   useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.text();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
+    setIsFetching(true);
+    const fetchApod = async () => {
+      try {
+        const res = await fetch(url);
+        if (res.status >= 200 && res.status <= 299) {
+          const data = await res.json();
+          setApod(data);
+        } else {
+          const { error } = await res.json();
+          console.log(error);
+          setError(error);
+        }
+        setIsFetching(false);
+      } catch (e) {
+        setIsFetching(false);
+        console.log(e);
+      }
+    };
+    setTimeout(() => {
+      fetchApod();
+    }, 2000);
+  }, [url]);
+
   return (
     <main>
-      <h1>Create React App + Go API</h1>
-      <h2>
-        Deployed with{' '}
-        <a
-          href="https://zeit.co/docs"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          ZEIT Now
-        </a>
-        !
-      </h2>
-      <p>
-        <a
-          href="https://github.com/zeit/now/tree/master/examples/create-react-app"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          This project
-        </a>{' '}
-        was bootstrapped with{' '}
-        <a href="https://facebook.github.io/create-react-app/">
-          Create React App
-        </a>{' '}
-        and contains three directories, <code>/public</code> for static assets,{' '}
-        <code>/src</code> for components and content, and <code>/api</code>{' '}
-        which contains a serverless <a href="https://golang.org/">Go</a>{' '}
-        function. See{' '}
-        <a href="/api/date">
-          <code>api/date</code> for the Date API with Go
-        </a>
-        .
-      </p>
-      <br />
-      <h2>The date according to Go is:</h2>
-      <p>{date ? date : 'Loading date...'}</p>
+      <h1 className="title">NASA Astronomy Photo Of The Day</h1>
+      <div className="app-wrapper">
+        {isFetching ? (
+          <>
+            <h1 className="loader-message">
+              One moment while we connect to NASA
+            </h1>
+            <img src={SaturnLoader} alt="cartoon spinning gif of Saturn" />
+          </>
+        ) : error ? (
+          <p className="error">{error.message}</p>
+        ) : (
+          <>
+            <section className="image">
+              <ApodImage apod={apod} />
+            </section>
+            <section className="info">
+              <ApodDetails
+                apod={apod}
+                startDate={startDate}
+                setStartDate={setStartDate}
+                setUrl={setUrl}
+              />
+            </section>
+          </>
+        )}
+      </div>
     </main>
   );
 }

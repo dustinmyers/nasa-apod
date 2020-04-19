@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "MADE";
+  font-style: normal;
+  font-weight: 200;
+  src: local("MADE Thin"), local("MADE-Thin"),
+    url(./assets/fonts/MADE-Evolve-Sans-Thin.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE-EVO";
+  font-style: normal;
+  font-weight: 200;
+  src: local("MADE EVO Thin"), local("MADE-EVO-Thin"),
+    url(./assets/fonts/MADE-Evolve-Sans-Thin-EVO.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE";
+  font-style: normal;
+  font-weight: 300;
+  src: local("MADE Light"), local("MADE-Light"),
+    url(./assets/fonts/MADE-Evolve-Sans-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE-EVO";
+  font-style: normal;
+  font-weight: 300;
+  src: local("MADE EVO Light"), local("MADE-EVO-Light"),
+    url(./assets/fonts/MADE-Evolve-Sans-Light-EVO.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE";
+  font-style: normal;
+  font-weight: 400;
+  src: local("MADE"), local("MADE-Regular"),
+    url(./assets/fonts/MADE-Evolve-Sans-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE-EVO";
+  font-style: normal;
+  font-weight: 400;
+  src: local("MADE-EVO"), local("MADE-EVO-Regular"),
+    url(./assets/fonts/MADE-Evolve-Sans-Regular-EVO.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE";
+  font-style: normal;
+  font-weight: 500;
+  src: local("MADE Medium"), local("MADE-MEDIUM"),
+    url(./assets/fonts/MADE-Evolve-Sans-Medium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE-EVO";
+  font-style: normal;
+  font-weight: 500;
+  src: local("MADE EVO Medium"), local("MADE-EVO-MEDIUM"),
+    url(./assets/fonts/MADE-Evolve-Sans-Medium-EVO.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE";
+  font-style: normal;
+  font-weight: 600;
+  src: local("MADE Bold"), local("MADE-BOLD"),
+    url(./assets/fonts/MADE-Evolve-Sans-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "MADE-EVO";
+  font-style: normal;
+  font-weight: 600;
+  src: local("MADE EVO Bold"), local("MADE-EVO-BOLD"),
+    url(./assets/fonts/MADE-Evolve-Sans-Bold-EVO.otf) format("opentype");
+}
+
+html {
+  font-family: "MADE", sans-serif;
+  font-weight: 400;
+  background: url(./assets/images/space-image.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+html,
+body,
+#root,
+main {
+  height: 100%;
+  min-width: 100%;
+}
+
+/* CSS Reset from - https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
