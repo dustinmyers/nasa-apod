@@ -53,20 +53,20 @@ function App() {
         ) : error ? (
           <p className="error">{error.message}</p>
         ) : (
-          <>
-            <section className="image">
-              <ApodImage apod={apod} />
-            </section>
-            <section className="info">
-              <ApodDetails
-                apod={apod}
-                startDate={startDate}
-                setStartDate={setStartDate}
-                setUrl={setUrl}
-              />
-            </section>
-          </>
-        )}
+              <>
+                <section className="image">
+                  <ApodImage apod={apod} />
+                </section>
+                <section className="info">
+                  <ApodDetails
+                    apod={apod}
+                    startDate={startDate}
+                    setStartDate={setStartDate}
+                    setUrl={setUrl}
+                  />
+                </section>
+              </>
+            )}
       </div>
     </main>
   );
